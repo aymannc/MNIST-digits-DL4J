@@ -94,10 +94,13 @@ public class MNISTDigits {
             System.out.println("Epoch " + (i + 1));
             model.fit(trainDataSetIterator);
             evaluation = model.evaluate(testDataSetIterator);
+
+            System.out.println("old accuracy " + startingAccuracy);
+            System.out.println("new accuracy " + evaluation.accuracy());
+
             System.out.println(evaluation.stats());
             if (evaluation.accuracy() > startingAccuracy) {
-                System.out.println("old accuracy " + startingAccuracy);
-                System.out.println("new accuracy " + evaluation.accuracy());
+                startingAccuracy = evaluation.accuracy();
                 System.out.println("Saving model !");
                 ModelSerializer.writeModel(model, new File(basePath + "/model.zip"), true);
             }

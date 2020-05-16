@@ -2,4 +2,4 @@
 
 - Confusion Matrix
 
-![Confusion Matrix](screens/Confusion Matrix.png)
+![Confusion Matrix](screens/confusion_matrix.png)
